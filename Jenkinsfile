@@ -9,13 +9,11 @@ pipeline {
         PORT = '3001'
     }
 
-    stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/guptajii30/Practical-4.git'
-            }
+   stage('Clone') {
+    steps {
+        git branch: 'main', url: 'https://github.com/guptajii30/Practical-4.git'
         }
-
+    }
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
